@@ -38,6 +38,6 @@ jobs:
     - name: Run Migrations
       env:
         DB_USERNAME: ${{ secrets.DB_USERNAME }}
-        DB_USERNAME: ${{ secrets.DB_PASSWORD }}
-        DB_USERNAME: ${{ secrets.DB_NAME }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_NAME: ${{ secrets.DB_NAME }}
       run: db-migrate up
