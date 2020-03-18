@@ -40,4 +40,6 @@ jobs:
         DB_USERNAME: ${{ secrets.DB_USERNAME }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         DB_NAME: ${{ secrets.DB_NAME }}
-      run: db-migrate up
+      run: |
+        npm install -g db-migrate &&
+        db-migrate up
