@@ -34,3 +34,10 @@ jobs:
         port: 22
         source: "dist/"
         target: "/var/www/html"
+
+    - name: Run Migrations
+      env:
+        DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        DB_USERNAME: ${{ secrets.DB_PASSWORD }}
+        DB_USERNAME: ${{ secrets.DB_NAME }}
+      run: db-migrate up

@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "db-migrate": "^0.11.6",
+    "db-migrate-mysql": "^2.1.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
