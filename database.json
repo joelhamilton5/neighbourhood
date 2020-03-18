@@ -3,12 +3,14 @@
         "driver": "mysql",
         "user": "root",
         "password": "root",
-        "database": "neighbourhood" 
+        "database": "neighbourhood",
+        "port": 3306
     },
     "production": {
         "driver": "mysql",
         "user": {"ENV": "DB_USERNAME"},
         "password": {"ENV": "DB_PASWORD"},
-        "database": {"ENV": "DB_NAME"}
+        "database": "neighbourhood",
+        "port": 3306
     }
 }

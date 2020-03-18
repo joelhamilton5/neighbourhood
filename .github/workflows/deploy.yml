@@ -20,7 +20,7 @@ jobs:
         node-version: '10.x'
 
     - name: Install npm dependencies
-      run: npm install
+      run: npm install -g db-migrate && npm install
 
     - name: Run build task
       run: npm run build --if-present
@@ -32,14 +32,12 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         port: 22
-        source: "dist/"
+        source: "dist/*"
         target: "/var/www/html"
 
     - name: Run Migrations
       env:
         DB_USERNAME: ${{ secrets.DB_USERNAME }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-        DB_NAME: ${{ secrets.DB_NAME }}
-      run: |
-        npm install -g db-migrate &&
-        db-migrate up
+        # DB_NAME: ${{ secrets.DB_NAME }}
+      run: db-migrate up
